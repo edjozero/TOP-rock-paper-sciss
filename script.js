@@ -32,46 +32,112 @@ let computerScore = 0;
 
 // create logic for playing one round of the game
 
-function playRound(humanChoice, computerChoice){
-    if (humanChoice === "rock") {
-        if(computerChoice === "rock"){
-            console.log("Tie, no one wins");
-        }else if(computerChoice === "paper"){
-            console.log("Computer wins this round");
-            computerScore++;
-        }else if(computerChoice === "scissors"){
-            console.log("Human wins this round");
-            humanScore++;
-        }
-    }
+// function playRound(humanChoice, computerChoice){
+//     if (humanChoice === "rock") {
+//         if(computerChoice === "rock"){
+//             console.log("Tie, no one wins");
+//         }else if(computerChoice === "paper"){
+//             console.log("Computer wins this round");
+//             computerScore++;
+//         }else if(computerChoice === "scissors"){
+//             console.log("Human wins this round");
+//             humanScore++;
+//         }
+//     }
 
-    if (humanChoice === "paper") {
-        if(computerChoice === "paper"){
-            console.log("Tie, no one wins");
-        }else if(computerChoice === "rock"){
-            console.log("Human wins this round");
-            humanScore++;
-        }else if(computerChoice === "scissors"){
-            console.log("Computer wins this round");
-            computerScore++;
-        }
-    }
+//     if (humanChoice === "paper") {
+//         if(computerChoice === "paper"){
+//             console.log("Tie, no one wins");
+//         }else if(computerChoice === "rock"){
+//             console.log("Human wins this round");
+//             humanScore++;
+//         }else if(computerChoice === "scissors"){
+//             console.log("Computer wins this round");
+//             computerScore++;
+//         }
+//     }
 
-    if (humanChoice === "scissors") {
-        if(computerChoice === "scissors"){
-            console.log("Tie, no one wins");
-        }else if(computerChoice === "rock"){
-            console.log("Computer wins this round");
-            humanScore++;
-        }else if(computerChoice === "paper"){
-            console.log("Human wins this round");
-            computerScore++;
+//     if (humanChoice === "scissors") {
+//         if(computerChoice === "scissors"){
+//             console.log("Tie, no one wins");
+//         }else if(computerChoice === "rock"){
+//             console.log("Computer wins this round");
+//             humanScore++;
+//         }else if(computerChoice === "paper"){
+//             console.log("Human wins this round");
+//             computerScore++;
+//         }
+//     }
+// }
+
+// const humanSelection = getHumanChoice();
+
+// const computerSelection = getComputerChoice();
+
+// playRound(humanSelection, computerSelection);
+
+// create playGame function
+// this function will take the playRound one inside.
+
+function playGame() {
+
+    let humanScore = 0;
+    let computerScore = 0;
+
+    for (let i = 1; i < 6; i++) {
+        function playRound(humanChoice, computerChoice){
+            if (humanChoice === "rock") {
+                if(computerChoice === "rock"){
+                    console.log("Tie, no one wins");
+                }else if(computerChoice === "paper"){
+                    console.log("Computer wins this round");
+                    computerScore++;
+                }else if(computerChoice === "scissors"){
+                    console.log("Human wins this round");
+                    humanScore++;
+                }
+            }
+        
+            if (humanChoice === "paper") {
+                if(computerChoice === "paper"){
+                    console.log("Tie, no one wins");
+                }else if(computerChoice === "rock"){
+                    console.log("Human wins this round");
+                    humanScore++;
+                }else if(computerChoice === "scissors"){
+                    console.log("Computer wins this round");
+                    computerScore++;
+                }
+            }
+        
+            if (humanChoice === "scissors") {
+                if(computerChoice === "scissors"){
+                    console.log("Tie, no one wins");
+                }else if(computerChoice === "rock"){
+                    console.log("Computer wins this round");
+                    humanScore++;
+                }else if(computerChoice === "paper"){
+                    console.log("Human wins this round");
+                    computerScore++;
+                }
+            }
         }
+
+        // this if statement needs to be put inside the for loop above. It should run only once the loop is done
+        if (humanScore === computerScore) {
+            console.log(`It's a tie! Human = ${humanScore} vs Computer = ${computerScore}`);
+        }else if(humanScore > computerScore){
+            console.log(`Human wins! Human = ${humanScore} vs Computer = ${computerScore}`)
+        }else if(humanScore < computerScore){
+            console.log(`Computer wins! Human = ${humanScore} vs Computer = ${computerScore}`)
+        }
+
+        const humanSelection = getHumanChoice();
+        
+        const computerSelection = getComputerChoice();
+        
+        playRound(humanSelection, computerSelection);
     }
 }
 
-const humanSelection = getHumanChoice();
-
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
+playGame();
