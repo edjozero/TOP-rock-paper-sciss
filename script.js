@@ -123,20 +123,21 @@ function playGame() {
             }
         }
 
-        // this if statement needs to be put inside the for loop above. It should run only once the loop is done
-        if (humanScore === computerScore) {
-            console.log(`It's a tie! Human = ${humanScore} vs Computer = ${computerScore}`);
-        }else if(humanScore > computerScore){
-            console.log(`Human wins! Human = ${humanScore} vs Computer = ${computerScore}`)
-        }else if(humanScore < computerScore){
-            console.log(`Computer wins! Human = ${humanScore} vs Computer = ${computerScore}`)
-        }
-
         const humanSelection = getHumanChoice();
         
         const computerSelection = getComputerChoice();
         
         playRound(humanSelection, computerSelection);
+    }
+
+    // adjustment from where this code was before
+    // it did not need to be in the for loop, actually had to be outside
+    if (humanScore === computerScore) {
+        console.log(`It's a tie! Human = ${humanScore} vs Computer = ${computerScore}`);
+    }else if(humanScore > computerScore){
+        console.log(`Human wins! Human = ${humanScore} vs Computer = ${computerScore}`)
+    }else if(humanScore < computerScore){
+        console.log(`Computer wins! Human = ${humanScore} vs Computer = ${computerScore}`)
     }
 }
 
