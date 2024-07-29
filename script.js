@@ -27,8 +27,8 @@ function getHumanChoice() {
 }
 
 // create scores for computer and human
-let humanScore = 0;
-let computerScore = 0;
+// let humanScore = 0;
+// let computerScore = 0;
 
 // create logic for playing one round of the game
 
@@ -135,10 +135,9 @@ function playGame() {
     if (humanScore === computerScore) {
         console.log(`It's a tie! Human = ${humanScore} vs Computer = ${computerScore}`);
     }else if(humanScore > computerScore){
-        console.log(`Human wins! Human = ${humanScore} vs Computer = ${computerScore}`)
+        console.log(`Human wins! Human = ${humanScore} vs Computer = ${computerScore}`);
     }else if(humanScore < computerScore){
-        console.log(`Computer wins! Human = ${humanScore} vs Computer = ${computerScore}`)
+        console.log(`Computer wins! Human = ${humanScore} vs Computer = ${computerScore}`);
     }
 }
 
-playGame();
