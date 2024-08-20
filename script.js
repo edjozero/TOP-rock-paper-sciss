@@ -1,3 +1,26 @@
+// grab content div to be able to put newly created elements inside
+const content = document.querySelector("#content");
+
+// div where rps buttons will be housed in
+const selectionsDiv = document.createElement("div");
+
+// create buttons for each selection for player: rock, paper, scissors
+const rock = document.createElement("button");
+const paper = document.createElement("button");
+const scissors = document.createElement("button");
+
+// set attributes for created buttons
+rock.setAttribute("class", "rock");
+paper.setAttribute("class", "paper");
+scissors.setAttribute("class", "scissors");
+
+// selectionsDiv.append(rock, paper, scissors);
+selectionsDiv.appendChild(rock);
+selectionsDiv.appendChild(paper);
+selectionsDiv.appendChild(scissors);
+
+content.appendChild(selectionsDiv);
+
 // computer choice code
 
 /*
