@@ -27,3 +27,12 @@ body{
     gap: 10px;
     margin: 10px;
 }
+
+#playerSelection{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    margin: 10px;
+    display: none;
+}

@@ -3,6 +3,7 @@ const content = document.querySelector("#content");
 
 // div where rps buttons will be housed in
 const selectionsDiv = document.createElement("div");
+selectionsDiv.setAttribute("id", "playerSelection");
 
 // create buttons for each selection for player: rock, paper, scissors
 const rock = document.createElement("button");
