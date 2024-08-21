@@ -31,6 +31,17 @@ selectionsDiv.appendChild(scissors);
 
 content.appendChild(selectionsDiv);
 
+
+// event listener to start the game
+const startGame = document.querySelector("#start-game");
+const playerChoices = document.querySelector("#playerSelection");
+playerChoices.style.display = "none"; //initially hidden
+
+startGame.addEventListener("click", () => {
+    playerChoices.style.display = "block";
+    startGame.style.display = "none";
+});
+
 // computer choice code
 
 /*
