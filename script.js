@@ -1,3 +1,9 @@
+/* 
+
+DOM ADDED ELEMENTS
+
+*/
+
 // grab content div to be able to put newly created elements inside
 const content = document.querySelector("#content");
 
@@ -31,6 +37,53 @@ selectionsDiv.appendChild(scissors);
 
 content.appendChild(selectionsDiv);
 
+// new div where scores and round results will be displayed on page
+// main div created
+const resultsDisplay = document.createElement("div");
+resultsDisplay.setAttribute("id", "results");
+
+content.appendChild(resultsDisplay);
+
+// div for the player scores, likely just two p tags idk
+const scoreDiv = document.createElement("div");
+scoreDiv.setAttribute("id", "scoreHeaders");
+
+//headers for player & comp
+const playerH = document.createElement("h3");
+const computerH = document.createElement("h3");
+
+playerH.setAttribute("id", "playerHeader");
+computerH.setAttribute("id", "computerHeader");
+
+scoreDiv.appendChild(playerH);
+scoreDiv.appendChild(computerH);
+
+resultsDisplay.appendChild(scoreDiv);
+
+// counts div and count text
+const countsDiv = document.createElement("div");
+countsDiv.setAttribute("id", "countsText");
+
+// p elements for player and computer counts
+const playerCount = document.createElement("p");
+const computerCount = document.createElement("p");
+
+playerCount.setAttribute("id", "playerCountText");
+computerCount.setAttribute("id", "computerCountText");
+
+countsDiv.appendChild(playerCount);
+countsDiv.appendChild(computerCount);
+
+resultsDisplay.appendChild(countsDiv);
+
+// div for the rounds result text, probably a list?
+
+
+/* 
+
+EVENT LISTENERS
+
+*/
 
 // event listener to start the game
 const startGame = document.querySelector("#start-game");
@@ -97,6 +150,13 @@ playerChoices.addEventListener("click", (e) => {
     
     playRound(humanSelection, computerSelection);    
 });
+
+
+/* 
+
+FUNCTIONS
+
+*/
 
 // checks who got to 5 rounds won and ends game
 function winner(){
