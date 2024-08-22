@@ -88,9 +88,7 @@ playerChoices.addEventListener("click", (e) => {
         }
 
         // checks scores and calls winner function that ends game
-        if(humanScore === 5 || computerScore === 5){
-            winner();
-        }
+        winner();
     }
 
     const humanSelection = e.target.className;
@@ -100,7 +98,7 @@ playerChoices.addEventListener("click", (e) => {
     playRound(humanSelection, computerSelection);    
 });
 
-// to be used in play round function
+// checks who got to 5 rounds won and ends game
 function winner(){
     if(humanScore === 5){
         console.log("You win! Click Restart to play again.");
