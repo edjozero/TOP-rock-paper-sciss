@@ -77,7 +77,15 @@ countsDiv.appendChild(computerCount);
 resultsDisplay.appendChild(countsDiv);
 
 // div for the rounds result text, probably a list?
+const roundResultsDiv = document.createElement("div");
+roundResultsDiv.setAttribute("id", "roundResults");
 
+const roundsUl = document.createElement("ul");
+roundsUl.setAttribute("id", "roundResultList");
+
+roundResultsDiv.appendChild(roundsUl);
+
+resultsDisplay.appendChild(roundResultsDiv);
 
 /* 
 
