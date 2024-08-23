@@ -101,6 +101,17 @@ playerChoices.style.display = "none"; //initially hidden
 startGame.addEventListener("click", () => {
     playerChoices.style.display = "block";
     startGame.style.display = "none";
+
+    // add player and computer score text as well as show their current score here
+    const playerHeaderText = document.createTextNode("Player: ");
+    playerHeaderText.textContent += humanScore;
+    playerHeader.appendChild(playerHeaderText);
+    
+
+    const computerHeaderText = document.createTextNode("Computer: ");
+    computerHeaderText.textContent += computerScore;
+    computerHeader.appendChild(computerHeaderText);
+
 });
 
 // scores to track points of player and computer
