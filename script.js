@@ -68,8 +68,8 @@ countsDiv.setAttribute("id", "countsText");
 const playerCount = document.createElement("p");
 const computerCount = document.createElement("p");
 
-playerCount.setAttribute("id", "playerCountText");
-computerCount.setAttribute("id", "computerCountText");
+playerCount.setAttribute("id", "showPlayerCount");
+computerCount.setAttribute("id", "showComputerCount");
 
 countsDiv.appendChild(playerCount);
 countsDiv.appendChild(computerCount);
@@ -104,13 +104,13 @@ startGame.addEventListener("click", () => {
 
     // add player and computer score text as well as show their current score here
     const playerHeaderText = document.createTextNode("Player: ");
-    playerHeaderText.textContent += humanScore;
     playerHeader.appendChild(playerHeaderText);
+    showPlayerCount.textContent = humanScore;
     
 
     const computerHeaderText = document.createTextNode("Computer: ");
-    computerHeaderText.textContent += computerScore;
     computerHeader.appendChild(computerHeaderText);
+    showComputerCount.textContent = computerScore;
 
 });
 
@@ -128,10 +128,10 @@ playerChoices.addEventListener("click", (e) => {
                 console.log("Tie, no one wins");
             }else if(computerChoice === "paper"){
                 console.log("Computer wins this round");
-                computerScore++;
+                incrementComputerScore();
             }else if(computerChoice === "scissors"){
                 console.log("Human wins this round");
-                humanScore++;
+                incrementPlayerScore();
             }
         }
     
@@ -140,10 +140,10 @@ playerChoices.addEventListener("click", (e) => {
                 console.log("Tie, no one wins");
             }else if(computerChoice === "rock"){
                 console.log("Human wins this round");
-                humanScore++;
+                incrementPlayerScore();
             }else if(computerChoice === "scissors"){
                 console.log("Computer wins this round");
-                computerScore++;
+                incrementComputerScore();
             }
         }
     
@@ -152,10 +152,10 @@ playerChoices.addEventListener("click", (e) => {
                 console.log("Tie, no one wins");
             }else if(computerChoice === "rock"){
                 console.log("Computer wins this round");
-                humanScore++;
+                incrementPlayerScore();
             }else if(computerChoice === "paper"){
                 console.log("Human wins this round");
-                computerScore++;
+                incrementComputerScore();
             }
         }
 
@@ -204,3 +204,13 @@ function reload() {
     return false;
 }
 
+// increment functions to increase score for each round won
+function incrementPlayerScore(){
+    humanScore++;
+    showPlayerCount.textContent = humanScore;
+}
+
+function incrementComputerScore(){
+    computerScore++;
+    showComputerCount.textContent = computerScore;
+}
