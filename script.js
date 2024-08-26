@@ -104,12 +104,16 @@ startGame.addEventListener("click", () => {
 
     // add player and computer score text as well as show their current score here
     const playerHeaderText = document.createTextNode("Player: ");
+    const playerHeader = document.querySelector("#playerHeader");
     playerHeader.appendChild(playerHeaderText);
+    const showPlayerCount = document.querySelector("#showPlayerCount");
     showPlayerCount.textContent = humanScore;
     
 
     const computerHeaderText = document.createTextNode("Computer: ");
+    const computerHeader = document.querySelector("#computerHeader");
     computerHeader.appendChild(computerHeaderText);
+    const showComputerCount = document.querySelector("#showComputerCount");
     showComputerCount.textContent = computerScore;
 
 });
