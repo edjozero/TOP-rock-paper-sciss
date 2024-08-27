@@ -56,7 +56,7 @@ scoreDiv.appendChild(computerH);
 
 textDiv.appendChild(scoreDiv);
 
-// div for the rounds result text, probably a list?
+// div for the rounds result text
 const roundResultsDiv = document.createElement("div");
 roundResultsDiv.setAttribute("id", "roundResults");
 
@@ -65,7 +65,7 @@ roundsUl.setAttribute("id", "roundResultList");
 
 roundResultsDiv.appendChild(roundsUl);
 
-textDiv.appendChild(roundResultsDiv);
+content.appendChild(roundResultsDiv);
 
 // variables for startGame and the playerChoices div. we hide the choices before the game begins
 const startGame = document.querySelector("#start-game");
