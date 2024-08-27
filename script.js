@@ -56,22 +56,6 @@ scoreDiv.appendChild(computerH);
 
 textDiv.appendChild(scoreDiv);
 
-// counts div and count text
-const countsDiv = document.createElement("div");
-countsDiv.setAttribute("id", "countsText");
-
-// p elements for player and computer counts
-const playerCount = document.createElement("p");
-const computerCount = document.createElement("p");
-
-playerCount.setAttribute("id", "showPlayerCount");
-computerCount.setAttribute("id", "showComputerCount");
-
-countsDiv.appendChild(playerCount);
-countsDiv.appendChild(computerCount);
-
-textDiv.appendChild(countsDiv);
-
 // div for the rounds result text, probably a list?
 const roundResultsDiv = document.createElement("div");
 roundResultsDiv.setAttribute("id", "roundResults");
