@@ -83,6 +83,19 @@ roundResultsDiv.appendChild(roundsUl);
 
 textDiv.appendChild(roundResultsDiv);
 
+// variables for startGame and the playerChoices div. we hide the choices before the game begins
+const startGame = document.querySelector("#start-game");
+const playerChoices = document.querySelector("#playerSelection");
+playerChoices.style.display = "none"; //initially hidden
+
+// add the player names: player and computer, also create variables for each which will be used later
+const playerHeaderText = document.createTextNode("Player: ");
+const playerHeader = document.querySelector("#playerHeader");
+
+const computerHeaderText = document.createTextNode("Computer: ");
+const computerHeader = document.querySelector("#computerHeader");
+
+
 /* 
 
 EVENT LISTENERS
@@ -90,28 +103,17 @@ EVENT LISTENERS
 */
 
 // event listener to start the game
-const startGame = document.querySelector("#start-game");
-const playerChoices = document.querySelector("#playerSelection");
-playerChoices.style.display = "none"; //initially hidden
 
 startGame.addEventListener("click", () => {
     playerChoices.style.display = "block";
     startGame.style.display = "none";
 
-    // add player and computer score text as well as show their current score here
-    const playerHeaderText = document.createTextNode("Player: ");
-    const playerHeader = document.querySelector("#playerHeader");
+    // add player and computer names and scores to the page
     playerHeader.appendChild(playerHeaderText);
-    const showPlayerCount = document.querySelector("#showPlayerCount");
-    showPlayerCount.textContent = humanScore;
+    playerHeader.textContent = `Player: ${humanScore}`;
     
-
-    const computerHeaderText = document.createTextNode("Computer: ");
-    const computerHeader = document.querySelector("#computerHeader");
     computerHeader.appendChild(computerHeaderText);
-    const showComputerCount = document.querySelector("#showComputerCount");
-    showComputerCount.textContent = computerScore;
-
+    computerHeader.textContent = `Computer: ${computerScore}`;
 });
 
 // scores to track points of player and computer
@@ -207,10 +209,10 @@ function reload() {
 // increment functions to increase score for each round won
 function incrementPlayerScore(){
     humanScore++;
-    showPlayerCount.textContent = humanScore;
+    playerHeader.textContent = `Player: ${humanScore}`;
 }
 
 function incrementComputerScore(){
     computerScore++;
-    showComputerCount.textContent = computerScore;
+    computerHeader.textContent = `Computer: ${computerScore}`;
 }
