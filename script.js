@@ -172,9 +172,19 @@ FUNCTIONS
 function winner(){
     if(humanScore === 5){
         console.log("You win! Click Restart to play again.");
+        // winner text added once game is won
+        const li = document.createElement("li");
+        li.textContent = "You win! Click Restart to play again..";
+        roundResultList.appendChild(li);
+
         playerChoices.style.display = "none";
     }else if(computerScore === 5){
         console.log("Computer wins! Click Restart to play again.");
+        // winner text added once game is lost
+        const li = document.createElement("li");
+        li.textContent = "Computer wins! Click Restart to play again.";
+        roundResultList.appendChild(li);
+
         playerChoices.style.display = "none";
     }
 }
