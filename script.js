@@ -67,6 +67,8 @@ roundResultsDiv.appendChild(roundsUl);
 
 content.appendChild(roundResultsDiv);
 
+const roundResultList = document.querySelector("#roundResultList");
+
 // variables for startGame and the playerChoices div. we hide the choices before the game begins
 const startGame = document.querySelector("#start-game");
 const playerChoices = document.querySelector("#playerSelection");
@@ -112,6 +114,7 @@ playerChoices.addEventListener("click", (e) => {
         if (humanChoice === "rock") {
             if(computerChoice === "rock"){
                 console.log("Tie, no one wins");
+                addRoundTieText();
             }else if(computerChoice === "paper"){
                 console.log("Computer wins this round");
                 incrementComputerScore();
@@ -124,6 +127,7 @@ playerChoices.addEventListener("click", (e) => {
         if (humanChoice === "paper") {
             if(computerChoice === "paper"){
                 console.log("Tie, no one wins");
+                addRoundTieText();
             }else if(computerChoice === "rock"){
                 console.log("Human wins this round");
                 incrementPlayerScore();
@@ -136,6 +140,7 @@ playerChoices.addEventListener("click", (e) => {
         if (humanChoice === "scissors") {
             if(computerChoice === "scissors"){
                 console.log("Tie, no one wins");
+                addRoundTieText();
             }else if(computerChoice === "rock"){
                 console.log("Computer wins this round");
                 incrementPlayerScore();
@@ -194,9 +199,25 @@ function reload() {
 function incrementPlayerScore(){
     humanScore++;
     playerHeader.textContent = `Player: ${humanScore}`;
+
+    // round result text added here
+    const li = document.createElement("li");
+    li.textContent = "Human wins this round.";
+    roundResultList.appendChild(li);
+    
 }
 
 function incrementComputerScore(){
     computerScore++;
     computerHeader.textContent = `Computer: ${computerScore}`;
+
+    const li = document.createElement("li");
+    li.textContent = "Computer wins this round.";
+    roundResultList.appendChild(li);
+}
+
+function addRoundTieText(){
+    const li = document.createElement("li");
+    li.textContent = "Tie, no one wins.";
+    roundResultList.appendChild(li);
 }
