@@ -7,6 +7,9 @@ DOM ADDED ELEMENTS
 // grab content div to be able to put newly created elements inside
 const content = document.querySelector("#content");
 
+// get access to text div
+const textDiv = document.querySelector(".text");
+
 // div where rps buttons will be housed in
 const selectionsDiv = document.createElement("div");
 selectionsDiv.setAttribute("id", "playerSelection");
@@ -37,13 +40,6 @@ selectionsDiv.appendChild(scissors);
 
 content.appendChild(selectionsDiv);
 
-// new div where scores and round results will be displayed on page
-// main div created
-const resultsDisplay = document.createElement("div");
-resultsDisplay.setAttribute("id", "results");
-
-content.appendChild(resultsDisplay);
-
 // div for the player scores, likely just two p tags idk
 const scoreDiv = document.createElement("div");
 scoreDiv.setAttribute("id", "scoreHeaders");
@@ -58,7 +54,7 @@ computerH.setAttribute("id", "computerHeader");
 scoreDiv.appendChild(playerH);
 scoreDiv.appendChild(computerH);
 
-resultsDisplay.appendChild(scoreDiv);
+textDiv.appendChild(scoreDiv);
 
 // counts div and count text
 const countsDiv = document.createElement("div");
@@ -74,7 +70,7 @@ computerCount.setAttribute("id", "showComputerCount");
 countsDiv.appendChild(playerCount);
 countsDiv.appendChild(computerCount);
 
-resultsDisplay.appendChild(countsDiv);
+textDiv.appendChild(countsDiv);
 
 // div for the rounds result text, probably a list?
 const roundResultsDiv = document.createElement("div");
@@ -85,7 +81,7 @@ roundsUl.setAttribute("id", "roundResultList");
 
 roundResultsDiv.appendChild(roundsUl);
 
-resultsDisplay.appendChild(roundResultsDiv);
+textDiv.appendChild(roundResultsDiv);
 
 /* 
 
