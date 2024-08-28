@@ -113,39 +113,30 @@ playerChoices.addEventListener("click", (e) => {
     function playRound(humanChoice, computerChoice){
         if (humanChoice === "rock") {
             if(computerChoice === "rock"){
-                console.log("Tie, no one wins");
                 addRoundTieText();
             }else if(computerChoice === "paper"){
-                console.log("Computer wins this round");
                 incrementComputerScore();
             }else if(computerChoice === "scissors"){
-                console.log("Human wins this round");
                 incrementPlayerScore();
             }
         }
     
         if (humanChoice === "paper") {
             if(computerChoice === "paper"){
-                console.log("Tie, no one wins");
                 addRoundTieText();
             }else if(computerChoice === "rock"){
-                console.log("Human wins this round");
                 incrementPlayerScore();
             }else if(computerChoice === "scissors"){
-                console.log("Computer wins this round");
                 incrementComputerScore();
             }
         }
     
         if (humanChoice === "scissors") {
             if(computerChoice === "scissors"){
-                console.log("Tie, no one wins");
                 addRoundTieText();
             }else if(computerChoice === "rock"){
-                console.log("Computer wins this round");
                 incrementPlayerScore();
             }else if(computerChoice === "paper"){
-                console.log("Human wins this round");
                 incrementComputerScore();
             }
         }
@@ -171,7 +162,6 @@ FUNCTIONS
 // checks who got to 5 rounds won and ends game
 function winner(){
     if(humanScore === 5){
-        console.log("You win! Click Restart to play again.");
         // winner text added once game is won
         const li = document.createElement("li");
         li.textContent = "You win! Click Restart to play again..";
@@ -179,7 +169,6 @@ function winner(){
 
         playerChoices.style.display = "none";
     }else if(computerScore === 5){
-        console.log("Computer wins! Click Restart to play again.");
         // winner text added once game is lost
         const li = document.createElement("li");
         li.textContent = "Computer wins! Click Restart to play again.";
