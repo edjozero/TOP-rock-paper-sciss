@@ -60,10 +60,10 @@ textDiv.appendChild(scoreDiv);
 const roundResultsDiv = document.createElement("div");
 roundResultsDiv.setAttribute("id", "roundResults");
 
-const roundsUl = document.createElement("ul");
-roundsUl.setAttribute("id", "roundResultList");
+const roundsOl = document.createElement("ol");
+roundsOl.setAttribute("id", "roundResultList");
 
-roundResultsDiv.appendChild(roundsUl);
+roundResultsDiv.appendChild(roundsOl);
 
 content.appendChild(roundResultsDiv);
 
