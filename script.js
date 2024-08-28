@@ -25,9 +25,9 @@ paper.setAttribute("class", "paper");
 scissors.setAttribute("class", "scissors");
 
 // text for buttons
-const rockText = document.createTextNode("Rock")
-const paperText = document.createTextNode("Paper")
-const scissorsText = document.createTextNode("Scissors")
+const rockText = document.createTextNode("Rock");
+const paperText = document.createTextNode("Paper");
+const scissorsText = document.createTextNode("Scissors");
 
 rock.appendChild(rockText);
 paper.appendChild(paperText);
