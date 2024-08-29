@@ -81,6 +81,9 @@ const playerHeader = document.querySelector("#playerHeader");
 const computerHeaderText = document.createTextNode("Computer: ");
 const computerHeader = document.querySelector("#computerHeader");
 
+// grab text under game title and this is where the winner of the game will be announced
+const gameStartText = document.querySelector(".gameStartText");
+
 
 /* 
 
@@ -93,6 +96,7 @@ EVENT LISTENERS
 startGame.addEventListener("click", () => {
     playerChoices.style.display = "block";
     startGame.style.display = "none";
+    gameStartText.textContent = "";
 
     // add player and computer names and scores to the page
     playerHeader.appendChild(playerHeaderText);
@@ -163,16 +167,16 @@ FUNCTIONS
 function winner(){
     if(humanScore === 5){
         // winner text added once game is won
-        const li = document.createElement("li");
-        li.textContent = "You win! Click Restart to play again..";
-        roundResultList.appendChild(li);
+        gameStartText.textContent = "You win! Click Restart to play again.";
+        gameStartText.style.color = "green";
+        gameStartText.style.fontSize = "30px";
 
         playerChoices.style.display = "none";
     }else if(computerScore === 5){
         // winner text added once game is lost
-        const li = document.createElement("li");
-        li.textContent = "Computer wins! Click Restart to play again.";
-        roundResultList.appendChild(li);
+        gameStartText.textContent = "Computer wins! Click Restart to play again.";
+        gameStartText.style.color = "red";
+        gameStartText.style.fontSize = "30px";
 
         playerChoices.style.display = "none";
     }
