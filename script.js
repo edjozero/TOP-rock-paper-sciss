@@ -117,31 +117,31 @@ playerChoices.addEventListener("click", (e) => {
     function playRound(humanChoice, computerChoice){
         if (humanChoice === "rock") {
             if(computerChoice === "rock"){
-                addRoundTieText();
+                addRoundTieText(humanChoice, computerChoice);
             }else if(computerChoice === "paper"){
-                incrementComputerScore();
+                incrementComputerScore(humanChoice, computerChoice);
             }else if(computerChoice === "scissors"){
-                incrementPlayerScore();
+                incrementPlayerScore(humanChoice, computerChoice);
             }
         }
     
         if (humanChoice === "paper") {
             if(computerChoice === "paper"){
-                addRoundTieText();
+                addRoundTieText(humanChoice, computerChoice);
             }else if(computerChoice === "rock"){
-                incrementPlayerScore();
+                incrementPlayerScore(humanChoice, computerChoice);
             }else if(computerChoice === "scissors"){
-                incrementComputerScore();
+                incrementComputerScore(humanChoice, computerChoice);
             }
         }
     
         if (humanChoice === "scissors") {
             if(computerChoice === "scissors"){
-                addRoundTieText();
+                addRoundTieText(humanChoice, computerChoice);
             }else if(computerChoice === "rock"){
-                incrementPlayerScore();
+                incrementPlayerScore(humanChoice, computerChoice);
             }else if(computerChoice === "paper"){
-                incrementComputerScore();
+                incrementComputerScore(humanChoice, computerChoice);
             }
         }
 
@@ -199,28 +199,28 @@ function reload() {
 }
 
 // increment functions to increase score for each round won
-function incrementPlayerScore(){
+function incrementPlayerScore(human, computer){
     humanScore++;
     playerHeader.textContent = `Player: ${humanScore}`;
 
     // round result text added here
     const li = document.createElement("li");
-    li.textContent = "Human wins this round.";
+    li.textContent = `You chose ${human}, Computer chose ${computer}. Human wins this round.`;
     roundResultList.appendChild(li);
     
 }
 
-function incrementComputerScore(){
+function incrementComputerScore(human, computer){
     computerScore++;
     computerHeader.textContent = `Computer: ${computerScore}`;
 
     const li = document.createElement("li");
-    li.textContent = "Computer wins this round.";
+    li.textContent = `You chose ${human}, Computer chose ${computer}. Computer wins this round.`;
     roundResultList.appendChild(li);
 }
 
-function addRoundTieText(){
+function addRoundTieText(human, computer){
     const li = document.createElement("li");
-    li.textContent = "Tie, no one wins.";
+    li.textContent = `You chose ${human}, Computer chose ${computer}. Tie, no one wins.`;
     roundResultList.appendChild(li);
 }
