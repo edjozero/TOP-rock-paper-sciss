@@ -94,7 +94,7 @@ EVENT LISTENERS
 // event listener to start the game
 
 startGame.addEventListener("click", () => {
-    playerChoices.style.display = "block";
+    playerChoices.style.display = "flex";
     startGame.style.display = "none";
     gameStartText.textContent = "";
 
